@@ -58,7 +58,7 @@ typedef struct instruction_s
 void pop(stack_t **stackPtr, unsigned int line_num);
 void push(stack_t **stackPtr, unsigned int line_num);
 void pall(stack_t **stackPtr, unsigned int line_num);
-(void nop(stack_t **stackPtr, unsigned int line_num);
+void nop(stack_t **stackPtr, unsigned int line_num);
 void pint(stack_t **stackPtr, unsigned int line_num);
 int ret_opcode(stack_t **stack, char *ret, char *val, int line_number);
 int isDigit(char *ret);
