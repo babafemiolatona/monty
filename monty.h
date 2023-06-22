@@ -66,6 +66,7 @@ void sub(stack_t **stackPtr, unsigned int line_num);
 void _divide(stack_t **stackPtr, unsigned int line_num);
 void swap(stack_t **stackPtr, unsigned int line_num);
 void mul(stack_t **stackPtr, unsigned int line_num);
+void mod(stack_t **stackPtr, unsigned int line_num);
 
 
 int ret_opcode(stack_t **stack, char *ret, char *val, int line_number);

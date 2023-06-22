@@ -24,6 +24,7 @@ int ret_opcode(stack_t **stack, char *ret, char *val, int line_number)
 		{"sub", sub},
 		{"div", _divide},
 		{"mul", mul},
+		{"mod", mod},
 		{NULL, NULL}
 	};
 

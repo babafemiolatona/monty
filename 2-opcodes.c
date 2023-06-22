@@ -23,3 +23,31 @@ void mul(stack_t **stackPtr, unsigned int line_num)
 	pop(stackPtr, line_num);
 	vand->n = prd;
 }
+
+/**
+ * mod - computes the rest of the division of the second top
+ * element of the stack by the top element of the stack
+ * @stackPtr: Pointer to top of the stack.
+ * @line_num: current line number
+ */
+
+void mod(stack_t **stackPtr, unsigned int line_num)
+{
+	int res;
+
+	if (stackPtr == NULL || *stackPtr == NULL || (*stackPtr)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+	if ((*stackPtr)->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+	(*stackPtr) = (*stackPtr)->next;
+	res = (*stackPtr)->n % (*stackPtr)->prev->n;
+	(*stackPtr)->n = res;
+	free((*stackPtr)->prev);
+	(*stackPtr)->prev = NULL;
+}
