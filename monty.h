@@ -67,7 +67,7 @@ stack_t *alloc_node(int n);
 void push_err(FILE *f, char *inputLine, stack_t *stackPtr, int line_num);
 void instruct_err(FILE *f, char *inputLine, stack_t *stackPtr,
 char *val, int line_num);
-
+void swap(stack_t **stackPtr, unsigned int line_num);
 void _free(stack_t *stackPtr);
 void argument_error(void);
 void fileAccessError(char *file);
