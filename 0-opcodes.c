@@ -68,18 +68,6 @@ void pall(stack_t **stackPtr, unsigned int line_num)
 }
 
 /**
- * nop - does nothing
- * @stackPtr: double pointer to the head of the stack
- * @line_num: current line number
- */
-
-void nop(stack_t **stackPtr, unsigned int line_num)
-{
-	(void)stackPtr;
-	(void)line_num;
-}
-
-/**
  * pint - prints value at the head of the stack
  * @stackPtr: pointer to head of the stack
  * @line_num: current line number
