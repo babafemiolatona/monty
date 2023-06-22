@@ -20,6 +20,7 @@ int ret_opcode(stack_t **stack, char *ret, char *val, int line_number)
 		{"pop", pop},
 		{"nop", nop},
 		{"swap", swap},
+		{"add", add},
 		{NULL, NULL}
 	};
 

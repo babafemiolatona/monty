@@ -54,3 +54,28 @@ void swap(stack_t **stackPtr, unsigned int line_num)
 		*stackPtr = addr;
 	}
 }
+
+/**
+ * add - adds the top two elements of the stack.
+ * @stackPtr: pointer to top of the stack
+ * @line_num: current line number
+ */
+
+void add(stack_t **stackPtr, unsigned int line_num)
+{
+	stack_t *heta = *stackPtr, *n;
+
+	if ((*stackPtr) == NULL || (*stackPtr)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+
+	if (*stackPtr && (*stackPtr)->next)
+	{
+		n = heta->next;
+		n->n += heta->n;
+		free(heta);
+		*stackPtr = n;
+	}
+}
