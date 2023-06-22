@@ -116,7 +116,7 @@ void _divide(stack_t **stackPtr, unsigned int line_num)
 	stack_t *vet;
 	int res = 0;
 
-	if ((*stackPtr) == NULL || (*stackPtr)->prev == NULL)
+	if ((*stackPtr) == NULL || (*stackPtr)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't div, stack too short\n", line_num);
 		exit(EXIT_FAILURE);
@@ -126,8 +126,9 @@ void _divide(stack_t **stackPtr, unsigned int line_num)
 		fprintf(stderr, "L%u: division by zero\n", line_num);
 		exit(EXIT_FAILURE);
 	}
-	vet = (*stackPtr)->prev;
-	res = (vet->n / (*stackPtr)->n);
-	vet->n = res;
+	vet = (*stackPtr)->next;
+	res = vet->n;
+	res /= (*stackPtr)->n;
 	pop(stackPtr, line_num);
+	vet->n = res;
 }
