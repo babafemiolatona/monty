@@ -79,3 +79,27 @@ void add(stack_t **stackPtr, unsigned int line_num)
 		*stackPtr = n;
 	}
 }
+
+/**
+ * sub - subtracts the top element of the stack from
+ * the second top element of the stack
+ * @stackPtr: double pointer to the top of the stack
+ * @line_num: current line number
+ */
+
+void sub(stack_t **stackPtr, unsigned int line_num)
+{
+	stack_t *vet = NULL;
+	int res = 0;
+
+	if (*stackPtr == NULL || (*stackPtr)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+	vet = (*stackPtr)->next;
+	res = vet->n;
+	res -= (*stackPtr)->n;
+	pop(stackPtr, line_num);
+	vet->n = res;
+}
