@@ -85,8 +85,8 @@ void pint(stack_t **stackPtr, unsigned int line_num)
 
 /**
  * nop - Does nothing.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: Interger representing the line number of of the opcode.
+ * @stackPtr: Pointer to a pointer pointing to top node of the stack.
+ * @line_num: Interger representing the line number of of the opcode.
  */
 void nop(stack_t **stackPtr, unsigned int line_num)
 {
