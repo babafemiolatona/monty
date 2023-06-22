@@ -40,5 +40,4 @@ stack_t *list = NULL;
 		_free(list->next);
 		free(list);
 	}
-
 }

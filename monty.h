@@ -55,6 +55,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* Opcodes */
 void pop(stack_t **stackPtr, unsigned int line_num);
 void push(stack_t **stackPtr, unsigned int line_num);
 void pall(stack_t **stackPtr, unsigned int line_num);
@@ -62,6 +63,10 @@ void nop(stack_t **stackPtr, unsigned int line_num);
 void pint(stack_t **stackPtr, unsigned int line_num);
 void add(stack_t **stackPtr, unsigned int line_num);
 void sub(stack_t **stackPtr, unsigned int line_num);
+void _divide(stack_t **stackPtr, unsigned int line_num);
+void swap(stack_t **stackPtr, unsigned int line_num);
+
+
 int ret_opcode(stack_t **stack, char *ret, char *val, int line_number);
 int isDigit(char *ret);
 void exec(char *argv);
@@ -69,7 +74,6 @@ stack_t *alloc_node(int n);
 void push_err(FILE *f, char *inputLine, stack_t *stackPtr, int line_num);
 void instruct_err(FILE *f, char *inputLine, stack_t *stackPtr,
 char *val, int line_num);
-void swap(stack_t **stackPtr, unsigned int line_num);
 void _free(stack_t *stackPtr);
 void argument_error(void);
 void fileAccessError(char *file);

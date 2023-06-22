@@ -103,3 +103,31 @@ void sub(stack_t **stackPtr, unsigned int line_num)
 	pop(stackPtr, line_num);
 	vet->n = res;
 }
+
+/**
+ * _divide - divides the second top element of the
+ * stack by the top element of the stack
+ * @stackPtr: pointer to top of the stack
+ * @line_num: current line number
+ */
+
+void _divide(stack_t **stackPtr, unsigned int line_num)
+{
+	stack_t *vet;
+	int res = 0;
+
+	if ((*stackPtr) == NULL || (*stackPtr)->prev == NULL)
+	{
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+	if ((*stackPtr)->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+	vet = (*stackPtr)->prev;
+	res = (vet->n / (*stackPtr)->n);
+	vet->n = res;
+	pop(stackPtr, line_num);
+}
