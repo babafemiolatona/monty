@@ -23,6 +23,7 @@ int ret_opcode(stack_t **stack, char *ret, char *val, int line_number)
 		{"add", add},
 		{"sub", sub},
 		{"div", _divide},
+		{"mul", mul},
 		{NULL, NULL}
 	};
 
