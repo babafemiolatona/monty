@@ -36,13 +36,9 @@ int ret_opcode(stack_t **stack, char *ret, char *val, int line_number)
 			if (!strcmp(ret, "push"))
 			{
 				if (isDigit(val) == 1)
-				{
 					value = atoi(val);
-				}
 				else
-				{
 					return (1);
-				}
 			}
 			op[i].f(stack, (unsigned int)line_number);
 			break;
