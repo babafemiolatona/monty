@@ -51,3 +51,28 @@ void mod(stack_t **stackPtr, unsigned int line_num)
 	free((*stackPtr)->prev);
 	(*stackPtr)->prev = NULL;
 }
+
+/**
+ * pchar - prints the char at the top of the stack
+ * @stackPtr: Pointer to head of the stack.
+ * @line_num: current line number
+ */
+
+void pchar(stack_t **stackPtr, unsigned int line_num)
+{
+	int asc;
+
+	if (stackPtr == NULL || *stackPtr == NULL)
+	{
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+
+	asc = (*stackPtr)->n;
+	if (asc < 0 || asc > 127)
+	{
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+	printf("%c\n", asc);
+}
